@@ -3,7 +3,7 @@
  * @param {string} string
  * @returns {string}
  */
-export const capitalizeString = (string) => string.split(' ').map((name) => `${name[0].toUpperCase()}${name.slice(1).toLowerCase()}`).join(' ');
+export const capitalizeString = (string) => string.split(' ').map((name) => `${name[0].toUpperCase()}${name.slice(1)}`).join(' ');
 
 /**
  * Должна быть function declaration
@@ -44,7 +44,7 @@ export const reducerIf = function (action, string) {
     }
     return newString;
   } else if(action === 'capitalize') {
-    return string.split(' ').map((name) => `${name[0].toUpperCase()}${name.slice(1).toLowerCase()}`).join(' ');
+    return string.split(' ').map((name) => `${name[0].toUpperCase()}${name.slice(1)}`).join(' ');
   } else {
     return string;
   }
@@ -73,7 +73,7 @@ export const reducerSwitch = (action, string) => {
       }
       return newString
     case 'capitalize':
-      return string.split(' ').map((name) => `${name[0].toUpperCase()}${name.slice(1).toLowerCase()}`).join(' ')
+      return string.split(' ').map((name) => `${name[0].toUpperCase()}${name.slice(1)}`).join(' ')
     default:
       return string
   }
@@ -105,7 +105,7 @@ export const consoleLoggerWordsFor = (string) => {
  */
 export const consoleLoggerWordsWhile = (string) => {
   let index = 0;
-  while (index < 5) {
+  while (index < string.length) {
     console.log(string[index]);
     index++;
   }
